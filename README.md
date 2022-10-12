@@ -83,18 +83,25 @@ some accuracy of matching the right feature between two images.
 Example of features that somewhat matched:\
 **Set 1 (easy object)**\
 Single object feature matches with single object with different object on the side. High
-cornerness threshold is 1e-6 on the left side and (1e-6)*2 on the right side. The result had 120
+cornerness threshold is 1e-6 on the left side and (1e-6)*2 on the right side. The result had 98
 matched lines counted by the algorithm.
-
 
 <img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/results/set1pair1resultss.png">
 
+Single object (blue clip) feature matches with single object with similar objects(yellow clip) and
+other objects. High cornerness threshold is 1e-6 on the left side and (1e-6)*4 on the right side.
+The result had 8 matched lines counted by the algorithm.
+
+<img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/results/set1pair2resultss.png">
+
+Single object (blue clip) feature matches with appearance changed single object (blue clip with
+tape on it) and similar/different objects on the side. High cornerness threshold is 1e-6 on the left
+side and (1e-6)*5 on the right side. The result had 21 matched lines counted by the algorithm.
+
+<img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/results/set1pair3resultss.png">
+
+
+
 ### Executing the program
 
-The application can be compiled and run using Android studio.
-
-The software uses Android API 24 and will be compatible with systems running Android 7.0.0+
-
-
-styleguide: https://google.github.io/styleguide/javaguide.html
 
