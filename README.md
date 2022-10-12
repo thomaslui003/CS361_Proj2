@@ -77,15 +77,17 @@ values matched, a line will be drawn across the matched points/harris corner poi
 each value in the pool of keypoint descriptor data is rounded to one decimal place to provide
 some accuracy of matching the right feature between two images.
 
-**(3.3: SIFT like Descriptor and Feature matching algorithm analysis)**\
-Example of features that somewhat matched:\
-**Set 1 (easy object)**
 
+**(3.3: SIFT like Descriptor and Feature matching algorithm analysis)**
+
+Example of features that somewhat matched:\
+**Set 1 (easy object)**\
 Single object feature matches with single object with different object on the side. High
 cornerness threshold is 1e-6 on the left side and (1e-6)*2 on the right side. The result had 120
 matched lines counted by the algorithm.
 
 
+<img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/results/set1pair1resultss.png">
 
 ### Executing the program
 
