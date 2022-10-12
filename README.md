@@ -4,17 +4,18 @@
 This repository is to showcase the Harris corners detector feature and the SIFT-like Descriptors and Feature Matching feature.
 
 ## Description
-1.1: Data Preparation\
-Set 1 (easy objects) images:
+**<ins>1.1: Data Preparation</ins>**\
+**Set 1** (easy objects) images:
 
 
-Set 2 (hard objects) images:
+**Set 2** (hard objects) images:
 
-Set 3 (faces) images:
+**Set 3** (faces) images:
 
 
-2.0: Detect Harris Corners\
-(2.1:implementation of Harris corner detector with a tuneable parameter)
+
+**<ins>2.0: Detect Harris Corners</ins>**\
+**(2.1:implementation of Harris corner detector with a tuneable parameter)**
 
 The implementation of Harris corner detector have two tuneable parameter and they are the gaussian function
 and the high corner filter variable which when we have smaller and smaller setting like 1-e6 we
@@ -28,9 +29,9 @@ corner will be detected. Lastly, we will use the find function to get all the co
 called locatedpoints which has all the coordinates of points.
 
 
-<img src="https://github.com/thomaslui003/Quick-fix/raw/main/layout1.png" width="807" height="524">
-<img src="https://github.com/thomaslui003/Quick-fix/raw/main/layout2.png" width="853" height="476">
+<img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/s1.png">
 
+**(2.2:Performance of the Harris corner detector algorithm with a tuneable parameter)**
 
 ### Executing the program
 
