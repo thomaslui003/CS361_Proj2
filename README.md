@@ -2,7 +2,7 @@
 # CS361 project 2
 
 This repository is to showcase the Harris corners detector feature and the SIFT-like Descriptors and Feature Matching feature.\
-Research paper on SIFT descriptors: https://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf
+UBC Research paper on SIFT descriptors: https://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf
 
 ## Description
 **<ins>1.1: Data Preparation</ins>**\
