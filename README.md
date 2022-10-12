@@ -1,17 +1,47 @@
 
 # CS361 project 2
 
-This repository is to showcase the Harris corners detector feature and the SIFT-like Descriptors and Feature Matching feature.
+This repository is to showcase the Harris corners detector feature and the SIFT-like Descriptors and Feature Matching feature.\
+Research paper on SIFT descriptors: https://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf
 
 ## Description
 **<ins>1.1: Data Preparation</ins>**\
 **Set 1** (easy objects) images:
 
+<p float="left">
+  <img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/plasticClip1.jpg" width="500" />
+  <img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/plasticClip2.jpg" width="500" /> 
+  
+</p>
+
+<p float="left">
+  <img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/plasticClip3.jpg" width="500" />
+  <img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/plasticClip4.jpg" width="500" /> 
+  
+</p>
+
 
 **Set 2** (hard objects) images:
 
+<p float="left">
+  <img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/battery1.jpg" width="500" />
+  <img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/battery2.jpg" width="500" /> 
+  
+</p>
+
+<p float="left">
+  <img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/battery3.jpg" width="500" />
+  <img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/battery4.jpg" width="500" /> 
+  
+</p>
+
 **Set 3** (faces) images:
 
+<p float="left">
+  <img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/myface1.jpg" width="500" />
+  <img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/myface3.jpg" width="500" /> 
+  <img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/myface4.jpg" width="500" /> 
+</p>
 
 
 **<ins>2.0: Detect Harris Corners</ins>**\
@@ -45,6 +75,15 @@ of 0.00005 or (1e-5)*5. With this bigger threshold, we get points located at the
 battery which is what we want for later use of feature matching with sift descriptor. Also, we get
 the total number of 51 located points in the bottom with that threshold meanwhile the smaller
 threshold get 337 located high cornerness points.
+
+Below is some other resulting images from the algorithm:
+
+<p float="left">
+  <img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/results/set1HarrisResult1.jpg" width="500" />
+  <img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/results/set2HarrisResult3.jpg" width="500" />
+  <img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/results/set3HarrisResult1.jpg" width="500" />
+</p>
+
 
 **<ins>3.0: SIFT like Descriptors and Feature Matching</ins>**\
 **(3.1:implementation of SIFT like descriptors for harris corners)**
@@ -114,6 +153,68 @@ the keypoint descriptor value is rounded to 1 decimal place and with these value
 to get perfect outcome. Also, the feature matching outcome of the hardest pair in set 1 resulted
 in a decent outcome as the center of the clip and edge of the clip was matched.
 
+
+**Set 2 (harder object)**
+
+Single object feature matches with single object with different object on the side. High
+cornerness threshold is (1e-6)*8 on the left side and (1e-5)*3 on the right side. The result had
+693 matched lines counted by the algorithm.
+
+<img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/results/set2pair1resultss.png">
+
+Single object (battery) feature matches with single object with similar objects(GP battery) and
+other objects. High cornerness threshold is (1e-6)*8 on the left side and (1e-5)*5 on the right
+side. The result had 247 matched lines counted by the algorithm.
+
+<img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/results/set2pair2resultss.png">
+
+Single object (battery) feature matches with appearance changed single object (battery with a
+black marker line drawn down center) and similar/different objects on the side. High cornerness
+threshold is 1e-6 on the left side and (1e-6)*6 on the right side. The result had 273 matched
+lines counted by the algorithm.
+
+<img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/results/set2pair3resultss.png">
+
+Likewise to set 1, the feature match algorithm performed better than for set 1 object as the
+branding letters on thebattery seems to have a better defined edge. As a result, the harris
+corner detector algorithm was able to spot out all of the high cornerness points near the letters
+of the battery which can be used to feature match. The success rate of matched point line
+drawn is approximated at 50% as we can see in the top and bottom image where majority of the
+matched lines are drawn between the battery branding label. However, these drawn line is not
+surely accurate as the matching and sift like descriptor algorithm implemented can not
+distinguish the exact point of feature that need to be match thus we have many line drawn
+between the images.
+
+
+**Set 3 (face)**
+
+Single object (face) feature matches with single object with similar objects(another person face)
+and other objects. High cornerness threshold is (1e-6) on the left side and (1e-5) on the right
+side. The result had 16 matched lines counted by the algorithm.
+
+<img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/results/set3pair2resultss.png">
+
+Single object (face) feature matches with appearance changed single object (my face with
+messing hairstyle) and similar/different objects on the side. High cornerness threshold is 1e-6 on
+the left side and (1e-6)*6 on the right side. The result had 3068 matched lines counted by the
+algorithm.
+
+<img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/results/set3pair3resultss.png">
+
+From this set of result, the sift like descriptor and harris corner detector algorithm implemented
+is not reliable at all as we can use the top image and observe that majority of the matched line
+from my face matched to the top of the onion. Similarly, on the middle pair image, we see that
+the corner points on the left side of my head got successfully matched with the same feature on
+the right side once (1/16 or 6% successful rate). In other words, my algorithm cannot perform
+feature matching correctly as the implementation and logic behind may be incorrect. But, to
+some surprise, the bottom pair of image shows none of the matched line drawn from my face
+leads to the other person face which shows my algorithm’s strength and inconsistency such that
+further improvement are needed.
+
+
 ### Executing the program
 
+For each report image, please open the matlab scripts that’s named according to the set of
+image eg. set1pair2.m and look at the sectioned out comments line and left click to highlight the
+portion of code that will generate the image and right click to the evaluate selection button.
 
