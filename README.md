@@ -32,6 +32,10 @@ called locatedpoints which has all the coordinates of points.
 <img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/s1.png">
 
 **(2.2:Performance of the Harris corner detector algorithm with a tuneable parameter)**
+<img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/s2.png">
+
+
+
 
 ### Executing the program
 
