@@ -100,7 +100,19 @@ side and (1e-6)*5 on the right side. The result had 21 matched lines counted by 
 
 <img src="https://github.com/thomaslui003/CS361_Proj2/raw/main/results/set1pair3resultss.png">
 
-
+The first set object is supposingly to be easy to feature match thus from a visual observation, it
+surely matched most of the feature of the blue clip against the right side clip feature. However,
+it seems to have a 25% correct rate of the matched line drawn which is caused by the detected
+corner points at either the black pen or the scissors which was not the intention of the feature
+match. These corner points’ key descriptor may have a similar value as a result it got wrongfully
+feature matched. Despite having the matching algorithm taking match point value within 0.1
+buffer, each corner point construction of the key descriptor is unique and different therefore
+similar feature in both image clip can’t be matched exactly as the creation of the same keypoint
+descriptor value may not be possible. Thus, the rounding of the value of keypoint descriptor take
+effect which helped matches some features across two different images. For example, in set 1,
+the keypoint descriptor value is rounded to 1 decimal place and with these value it may be hard
+to get perfect outcome. Also, the feature matching outcome of the hardest pair in set 1 resulted
+in a decent outcome as the center of the clip and edge of the clip was matched.
 
 ### Executing the program
 
