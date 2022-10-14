@@ -186,7 +186,7 @@ distinguish the exact point of feature that need to be match thus we have many l
 between the images.
 
 
-**Set 3 (face)**
+**Set 3 (face) - algorithm failure**
 
 Single object (face) feature matches with single object with similar objects(another person face)
 and other objects. High cornerness threshold is (1e-6) on the left side and (1e-5) on the right
